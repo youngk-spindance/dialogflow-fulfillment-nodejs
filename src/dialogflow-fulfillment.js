@@ -494,9 +494,9 @@ class WebhookClient {
     const payload = this.existingPayload_(requestSource);
 
     console.log('----------------------------');
+    console.log(messages);
     console.log(payload);
     console.log(requestSource);
-    console.log(payload)
 
     if (messages.length === 1 &&
       messages[0] instanceof Text) {
