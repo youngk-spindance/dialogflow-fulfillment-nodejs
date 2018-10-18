@@ -53,6 +53,7 @@ class Payload extends RichResponse {
    */
   constructor(platform, payload, {sendAsMessage=false, rawPayload=false}={}) {
     super();
+    console.log(platform);
     if (!payload && (typeof platform === 'object' && !platform.payload)) {
       throw new Error('Payload can NOT be empty');
     }
