@@ -503,6 +503,7 @@ class WebhookClient {
       this.client.addTextResponse_();
     } else if (SUPPORTED_RICH_MESSAGE_PLATFORMS.indexOf(this.requestSource) > -1
       || SUPPORTED_PLATFORMS.indexOf(this.requestSource) < 0) {
+      console.log('add message.....');
       this.client.addMessagesResponse_(requestSource);
     }
     if (payload) {
