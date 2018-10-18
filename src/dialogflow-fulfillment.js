@@ -506,8 +506,14 @@ class WebhookClient {
       console.log('add message.....');
       this.client.addMessagesResponse_(requestSource);
     }
-    if (payload) {
-      this.client.addPayloadResponse_(payload, requestSource);
+
+    //if (payload) {
+    //  this.client.addPayloadResponse_(payload, requestSource);
+    //}
+    for (let response of this.responseMessages_) {
+      if (response instanceof Payload) {
+        this.client.addPayloadResponse_(response, requestSource);
+      }
     }
     this.client.sendResponses_(requestSource);
   }
